@@ -94,11 +94,11 @@ class InfrastructureObject(Base, CommonMixin):
 
     materials: Mapped[list['Material']] = relationship(
         secondary=material_infrastructureobject,
-        back_populates='infrastructure_objects',
+        back_populates='infrastructure_objects'
     )
     hardwares: Mapped[list['Hardware']] = relationship(
         secondary=hardware_infrastructureobject,
-        back_populates='infrastructure_objects',
+        back_populates='infrastructure_objects'
     )
     object_type: Mapped[int] = mapped_column(
         Integer,
@@ -114,5 +114,5 @@ class InfrastructureObject(Base, CommonMixin):
             'section.id',
             name='fk_infrastructureobject_section_id_section'
         ),
-        nullable=True
+        nullable=False
     )
